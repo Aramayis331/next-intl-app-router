@@ -1,4 +1,4 @@
-import { Locale } from 'i18n';
+import { Locale } from '@/i18n';
 import {getTranslator, unstable_setRequestLocale} from 'next-intl/server';
 
 type Props = {

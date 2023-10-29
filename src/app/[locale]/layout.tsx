@@ -1,12 +1,12 @@
-import 'app/globals.css'
+import '@/src/app/globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages, Locale, locales} from "i18n";
+import { getMessages, Locale, locales} from "@/i18n";
 import { ReactNode } from "react";
 import { notFound } from 'next/navigation';
 import { unstable_setRequestLocale } from 'next-intl/server';
-import Header from "components/Header";
+import Header from "@/src/components/Header";
 
 const inter = Inter({ subsets: ['latin'] })
 

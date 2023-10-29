@@ -1,11 +1,11 @@
 'use client'
 
-import LocaleSwitcher from "@/components/LocalSwitcher";
+import LocaleSwitcher from "@/src/components/LocalSwitcher";
 import { Suspense } from 'react'
-import {Link, usePathname} from "navigation";
+import {Link, usePathname} from "@/i18n";
 import {useTranslations} from "next-intl";
 import classNames from "classnames";
-import {ROUTE_CONTACT, ROUTE_HOME} from "constants/routes";
+import {ROUTE_CONTACT, ROUTE_HOME} from "@/src/constants/routes";
 
 const Header = () => {
     const t = useTranslations('Header');

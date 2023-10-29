@@ -1,9 +1,9 @@
 'use client';
 
 import {useLocale} from 'next-intl';
-import {usePathname, useRouter} from 'navigation';
+import {usePathname, useRouter} from '@/i18n';
 import {ChangeEvent, useTransition} from 'react';
-import {locales} from "i18n";
+import {locales} from "@/i18n";
 import {useSearchParams} from "next/navigation";
 
 export default function LocaleSwitcher() {
