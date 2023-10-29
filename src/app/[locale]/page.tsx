@@ -6,9 +6,8 @@ type Props = {
 }
 
 const Home = async ({ params: { locale } }: Props) => {
-  const t = await getTranslator(locale, 'Home');
-
-  unstable_setRequestLocale(locale);
+    unstable_setRequestLocale(locale);
+    const t = await getTranslator(locale, 'Home');
 
   return (
     <main className="flex flex-col items-center justify-between p-24">

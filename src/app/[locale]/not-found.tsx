@@ -3,10 +3,9 @@ import {unstable_setRequestLocale} from "next-intl/server";
 import {Locale} from "@/i18n";
 
 const NotFound = () => {
-    const t = useTranslations('NotFoundPage');
     const locale = useLocale()
-
     unstable_setRequestLocale(locale as Locale);
+    const t = useTranslations('NotFoundPage');
 
     return (
         <div className="w-fit mx-auto mt-10">
