@@ -15,11 +15,11 @@ const Header = () => {
         <div className="bg-slate-800">
             <nav className="container flex justify-between p-2 text-white mx-auto">
                 <div>
-                    <Link href={ROUTE_HOME} className={classNames("inline-block px-2 py-3 transition-colors", {
+                    <Link href={ROUTE_HOME as any} className={classNames("inline-block px-2 py-3 transition-colors", {
                         "text-white": pathname === ROUTE_HOME,
                         "text-gray-400 hover:text-gray-200": pathname !== ROUTE_HOME
                     })}>{t('home')}</Link>
-                    <Link href={ROUTE_CONTACT} className={classNames("inline-block px-2 py-3 transition-colors", {
+                    <Link href={ROUTE_CONTACT as any} className={classNames("inline-block px-2 py-3 transition-colors", {
                         "text-white": pathname === ROUTE_CONTACT,
                         "text-gray-400 hover:text-gray-200": pathname !== ROUTE_CONTACT
                     })}>{t('about')}</Link>

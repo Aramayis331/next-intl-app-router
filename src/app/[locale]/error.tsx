@@ -1,8 +1,7 @@
 'use client';
 
-import {useLocale, useTranslations} from 'next-intl';
+import { useTranslations} from 'next-intl';
 import {useEffect} from "react";
-import {unstable_setRequestLocale} from "next-intl/server";
 
 type Props = {
     error: Error;
@@ -10,8 +9,6 @@ type Props = {
 };
 
 const Error = ({error, reset}: Props) => {
-    const locale = useLocale()
-    unstable_setRequestLocale(locale);
     const t = useTranslations('Error');
 
     useEffect(() => {

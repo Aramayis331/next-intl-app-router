@@ -1,2 +1,2 @@
-export const ROUTE_HOME: any = '/'
-export const ROUTE_CONTACT: any = '/contact'
+export const ROUTE_HOME = '/' as const
+export const ROUTE_CONTACT = '/contact' as const
