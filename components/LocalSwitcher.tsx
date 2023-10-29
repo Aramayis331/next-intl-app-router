@@ -4,17 +4,19 @@ import {useLocale} from 'next-intl';
 import {usePathname, useRouter} from 'next-intl/client';
 import {ChangeEvent, useTransition} from 'react';
 import {locales} from "i18n";
+import {useSearchParams} from "next/navigation";
 
 export default function LocaleSwitcher() {
     const [isPending, startTransition] = useTransition();
     const locale = useLocale();
-    const router = useRouter();
+    const { replace } = useRouter();
     const pathname = usePathname();
+    const searchParams = useSearchParams()
 
     const onSelectChange = (event: ChangeEvent<HTMLSelectElement>) =>{
         const nextLocale = event.target.value;
         startTransition(() => {
-            router.replace(pathname, {locale: nextLocale});
+            replace(`${pathname}${searchParams.toString() ? `?${searchParams.toString()}` : ''}`, {locale: nextLocale});
         });
     }
 
