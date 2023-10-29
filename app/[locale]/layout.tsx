@@ -1,9 +1,11 @@
 import 'app/globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import {NextIntlClientProvider} from 'next-intl';
-import {getMessages, Locale, locales} from "i18n";
-import {ReactNode} from "react";
+import { NextIntlClientProvider } from 'next-intl';
+import { getMessages, Locale, locales} from "i18n";
+import { ReactNode } from "react";
+import { notFound } from 'next/navigation';
+import { unstable_setRequestLocale } from 'next-intl/server';
 import Header from "components/Header";
 
 const inter = Inter({ subsets: ['latin'] })
@@ -26,10 +28,15 @@ const RootLayout = async ({
   children, params: {locale}
 }: Props) => {
   const messages = await getMessages(locale)
+
+  if (!locales.includes(locale as Locale)) notFound();
+
+  unstable_setRequestLocale(locale);
+
   return (
     <html lang={locale}>
       <body className={inter.className}>
-        <NextIntlClientProvider locale={locale} messages={messages}>
+        <NextIntlClientProvider timeZone='Asia/Yerevan' locale={locale} messages={messages}>
           <Header />
           {children}
         </NextIntlClientProvider>

@@ -1,7 +1,7 @@
 'use client';
 
 import {useLocale} from 'next-intl';
-import {usePathname, useRouter} from 'next-intl/client';
+import {usePathname, useRouter} from 'navigation';
 import {ChangeEvent, useTransition} from 'react';
 import {locales} from "i18n";
 import {useSearchParams} from "next/navigation";

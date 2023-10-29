@@ -1,5 +1,5 @@
 import { Locale } from 'i18n';
-import { getTranslator } from 'next-intl/server';
+import {getTranslator, unstable_setRequestLocale} from 'next-intl/server';
 
 type Props = {
     params: { locale: Locale }
@@ -8,6 +8,8 @@ type Props = {
 
 const Contact = async ({ params: { locale } }: Props) => {
     const t = await getTranslator(locale, 'Home');
+
+    unstable_setRequestLocale(locale);
 
     return (
         <main className="flex flex-col items-center justify-between p-24">
