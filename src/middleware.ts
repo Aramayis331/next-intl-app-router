@@ -1,12 +1,11 @@
 import createIntlMiddleware from 'next-intl/middleware';
 import {NextRequest} from 'next/server';
-import {defaultLocale, locales, pathnames} from "@/i18n";
+import {defaultLocale, locales} from "@/i18n";
 
 const middleware = async (request: NextRequest) => {
     const handleI18nRouting = createIntlMiddleware({
         defaultLocale,
-        locales,
-        pathnames
+        locales
     });
 
     const response = handleI18nRouting(request);

@@ -1,16 +1,10 @@
 import {getRequestConfig} from 'next-intl/server';
 import {notFound} from "next/navigation";
-import {createLocalizedPathnamesNavigation, Pathnames} from "next-intl/navigation";
-import {ROUTE_CONTACT, ROUTE_HOME} from "@/constants/routes";
+import {createSharedPathnamesNavigation} from "next-intl/navigation";
 
 export const defaultLocale = 'en'
 export const locales = [defaultLocale, 'ru'] as const
 export type Locale = (typeof locales)[number]
-
-export const pathnames: Pathnames<typeof locales> = {
-    [ROUTE_HOME]: ROUTE_HOME,
-    [ROUTE_CONTACT]: ROUTE_CONTACT,
-}
 
 export const getMessages = async (locale: Locale) => {
     try {
@@ -20,9 +14,8 @@ export const getMessages = async (locale: Locale) => {
     }
 }
 
-export const { Link, redirect, usePathname, useRouter } = createLocalizedPathnamesNavigation({
-    locales,
-    pathnames,
+export const { Link, redirect, usePathname, useRouter } = createSharedPathnamesNavigation({
+    locales
 });
 
 export default getRequestConfig(async ({locale}) => ({
