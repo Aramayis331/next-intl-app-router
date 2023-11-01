@@ -1,4 +1,5 @@
 {
+  "currency": "{price, number, precise} ֏",
   "Home": {
     "title": "next-intl example",
     "description": "This is a basic example that demonstrates the usage of with the Next.js App Router. Try changing the locale in the top right corner and see how the content changes."
