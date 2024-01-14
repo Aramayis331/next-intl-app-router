@@ -19,5 +19,6 @@ export const { Link, redirect, usePathname, useRouter } = createSharedPathnamesN
 });
 
 export default getRequestConfig(async ({locale}) => ({
-    messages: (await import(`src/messages/${locale}.json`)).default
+    messages: (await import(`src/messages/${locale}.json`)).default,
+    timeZone: 'Asia/Yerevan',
 }));
