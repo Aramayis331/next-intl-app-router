@@ -8,7 +8,7 @@ export type Locale = (typeof locales)[number]
 
 export const getMessages = async (locale: Locale) => {
     try {
-        return (await import(`src/messages/${locale}.json`)).default;
+        return (await import(`../messages/${locale}.json`)).default;
     } catch (error) {
         notFound();
     }
@@ -19,6 +19,6 @@ export const { Link, redirect, usePathname, useRouter } = createSharedPathnamesN
 });
 
 export default getRequestConfig(async ({locale}) => ({
-    messages: (await import(`src/messages/${locale}.json`)).default,
+    messages: (await import(`../messages/${locale}.json`)).default,
     timeZone: 'Asia/Yerevan',
 }));
